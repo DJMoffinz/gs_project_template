@@ -26,3 +26,9 @@ for building the normie way refer to the upstream readme
 for building the _cool_ way compile `nobuild.c` with whatever compiler you use, then run the resulting binary
 
 works on linux, not yet tested on windows (if someone who uses windows tries this and it works make a PR to this readme and change this line)
+
+### pros and cons of using nobuild for this
+- cross-platform (pro)
+- written in c (pro and con)
+  - i tried to show the merit of this by getting the output file name from the source code that's being compiled, however i had to add a little header file to the source code and get the variable from there, 'cause if i put it in `main.c` and got it from there i'd need to include all the gs dependencies in `nobuild.c`, and then i'd need a build system for my build system
+- cool (pro)
