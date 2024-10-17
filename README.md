@@ -32,3 +32,7 @@ works on linux, not yet tested on windows (if someone who uses windows tries thi
 - written in c (pro and con)
   - i tried to show the merit of this by getting the output file name from the source code that's being compiled, however i had to add a little header file to the source code and get the variable from there, 'cause if i put it in `main.c` and got it from there i'd need to include all the gs dependencies in `nobuild.c`, and then i'd need a build system for my build system
 - cool (pro)
+
+## Aknowledgements
+- john for making gunslinger and everything else
+- rexim for making nobuild
