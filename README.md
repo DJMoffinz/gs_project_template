@@ -25,7 +25,7 @@ for building the normie way refer to the upstream readme
 
 for building the _cool_ way compile `nobuild.c` with whatever compiler you use, then run the resulting binary
 
-works on linux, not yet tested on windows (if someone who uses windows tries this and it works make a PR to this readme and change this line)
+works on linux and windows
 
 ### pros and cons of using nobuild for this
 - cross-platform (pro)
