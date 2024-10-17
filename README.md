@@ -21,73 +21,8 @@ git submodule update --remote --rebase --recursive
 
 ## Build Instructions:
 
-### Windows
-## MSVC:
-- From start menu, open `{x86|x64} Native Tools for {VS Version Here}`
-- cd to `root dir` where you downloaded project template
-- To compile the project, run:
-```bash
-proc\win\cl.bat
-```
-- To execute the program, run: 
-```bash
-bin\App.exe
-```
-### MINGW:
-- From `root dir`, open `git bash`
-- To compile, run: 
-```bash
-bash ./proc/win/mingw.sh
-```
-- To execute the program, run:
-```bash
-./bin/App.exe
-```
+for building the normie way refer to the upstream readme
 
-### Linux
+for building the _cool_ way compile `nobuild.c` with whatever compiler you use, then run the resulting binary
 
-## Before Compiling:
-- Make sure the following development libraries are installed: 
-```bash
-sudo apt install git gcc mesa-common-dev libxcursor-dev libxrandr-dev libxinerama-dev libxi-dev
-```
-- For Mesa and OpenGL, need to export the following: 
-```bash
-export MESA_GL_VERSION_OVERRIDE=3.3
-```
-- Credit to https://github.com/Samdal
-
-## GCC:
-- Open terminal
-- cd to `root dir` where you downloaded project template
-- To compile the project, run:
-```bash
-bash ./proc/linux/gcc.sh
-```
-- To execute the program, run: 
-```bash
-./bin/App
-```
-
-### OSX
-## GCC: 
-- Open terminal
-- cd to `root dir` where you downloaded project template
-- To compile the project, run:
-```bash
-bash ./proc/osx/gcc.sh
-```
-- To execute the program, run: 
-```bash
-./bin/App
-```
-
-### HTML5
-## Emscripten: 
-- Open terminal
-- cd to `root dir` where you downloaded project template
-- To compile the project, run:
-```bash
-bash ./proc/osx/emcc.sh
-```
-- This will generate the appropriate .html, .js, and .wsm files to load in a browser. 
+works on linux, not yet tested on windows (if someone who uses windows tries this and it works make a PR to this readme and change this line)
