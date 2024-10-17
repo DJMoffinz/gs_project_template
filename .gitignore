@@ -5,3 +5,5 @@ bin/App.ilk
 bin/App.pdb
 bin/main.obj
 bin/App
+nobuild
+nobuild.old

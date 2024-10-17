@@ -9,31 +9,33 @@
 
 #define BUILD_DIR "bin"
 
-//properties users should change
+//properties users can change
 #ifndef WIN32 // *NIX build flags
 
+#define t "-" //TODO: move this somewhere else, in the meantime this isnt meant to be modified
 #define CC "cc"
-#define CFLAGS "-std=gnu99", "-w", "-ldl", "-lGL", "-lX11", "-pthread", "-lXi", "-lm"
-#define REL_FLAGS "-O3"
-#define OUTPUT "-o", PATH(BUILD_DIR, PROJ_NAME)
+#define CFLAGS t "std=gnu99", t "w", t "ldl", t "lGL", t "lX11", t "pthread", t "lXi", t "lm"
+#define REL_FLAGS t "O3"
+#define OUTPUT t "o", PATH(BUILD_DIR, PROJ_NAME)
 
 #else         // Winblows build flags
 
+#define t "/" //TODO: move this somewhere else, in the meantime this isnt meant to be modified
 #define CC "cl.exe"
-#define CFLAGS "/EHsc", "/link", "/SUBSYSTEM:CONSOLE", "/NODEFAULTLIB:msvcrt.lib", "/NODEFAULTLIB:LIBCMT" \ //actual flags
+#define CFLAGS t "EHsc", t "link", t "SUBSYSTEM:CONSOLE", t "NODEFAULTLIB:msvcrt.lib", t "NODEFAULTLIB:LIBCMT" \ //actual flags
                "opengl32.lib", "kernel32.lib", "user32.lib", \                                              //manually linked os libraries
                "shell32.lib", "vcruntime.lib", "msvcrt.lib", "gdi32.lib", "Winmm.lib", "Advapi32.lib"       //more os libraries kekw, imagine using windows
-#define REL_FLAGS "/MP", "/FS", "/Ox", "/W0"
-#define DBG_FLAGS "/w", "/MP", "-Zi", "/DEBUG:FULL"
-#define OUTPUT "/Fe", PATH(BUILD_DIR, PROJ_NAME ".exe")
+#define REL_FLAGS t "MP", t "FS", t "Ox", t "W0"
+#define DBG_FLAGS t "w", t "MP", "-Zi", t "DEBUG:FULL"
+#define OUTPUT t "Fe", PATH(BUILD_DIR, PROJ_NAME ".exe")
 
 #endif
 
 // Include directories
-#define INCLUDE "-I", PATH(".", "third_party", "include")
+#define INCLUDE t "I", PATH(".", "third_party", "include")
 
 // Source files
-// TODO: figure out how to make wildcards work in path macros, this also means i'll need to be able to pass arrays to the CMD macro
+// TODO: figure out how to make wildcards work in path macros, this also probably means i'll need to be able to pass arrays to the CMD macro
 #define SOURCES PATH(".","source","main.c") //i will say that being able to pass wildcarded file paths to msvc is one thing windows did right
 
 void clean_build_dir(void)
